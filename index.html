@@ -40,6 +40,18 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-light_green.min.css" />
     <link rel="stylesheet" href="css/style.css">
     
+    <script>
+        
+        $.getJSON(
+  "http://77.48.244.194:8888/?api=json",
+  function(data) {
+  
+    $('#teplota').append(" " + data.teplota);
+    $('#vlhkost').append(" " + data.vlhkost);
+    $('#tlak').append(" " + data.tlak);
+    }
+);</script>
+      
   </head>
   <body>
    
@@ -58,7 +70,7 @@
 
    </span>
     </div>
-    <!-- Tabs <--></-->
+    <!-- Tabs <-->
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect ">
       <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Radar</a>
       <a href="#fixed-tab-2" class="mdl-layout__tab">Předpověď</a>
@@ -82,7 +94,15 @@
     <section class="mdl-layout__tab-panel" id="fixed-tab-2">
       <div class="page-content">
    
+<div class="container">
 
+  <h3>Teplota:<span id="teplota"></span></h3>
+  <h3>Vlhkost:<span id="vlhkost"></span></h3>
+  <h3>Tlak:<span id="tlak"></span></h3>
+
+</div>
+          
+          
           <div id="weather">
           <div id="setting">
             <!-- More location ID can be found here http://woeid.rosselliot.co.nz/lookup -->
@@ -128,10 +148,7 @@
           <div v-else="">Location ID error</div>
         </div>
           
-               
-        <div>
-         <iframe  id="display" style="box-sizing: border-box;position: absolute;top: 65px;right: 200px; height: 600px; width: 1000px;" src="http://wttr.in/UHE_tQ_lang=cs.png"></iframe>
-         </div>
+          
           
       </div>
     </section>
