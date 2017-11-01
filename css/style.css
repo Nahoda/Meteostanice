@@ -2,6 +2,27 @@
   box-sizing: border-box;
 }
 
+
+.container{
+  width:240px;
+  margin:60px auto;
+  background-color: #212121;
+  color:white;
+  padding:20px;
+  text-align:center;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+h3, #refresh{
+  font-family:'Open Sans'
+}
+
+h3{
+  color:#ffa000;
+}
+
+
+
 body {
   margin: 0;
   padding: 0;
