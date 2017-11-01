@@ -42,10 +42,8 @@
     
     <script>
         
-        $.getJSON(
-  "http://77.48.244.194:8888/?api=json",
-  function(data) {
-  
+        $.getJSON("http://77.48.244.194:8888/?api=json", function(data) {
+    
     $('#teplota').append(" " + data.teplota);
     $('#vlhkost').append(" " + data.vlhkost);
     $('#tlak').append(" " + data.tlak);
