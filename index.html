@@ -42,12 +42,14 @@
     
     <script>
         
-        $.getJSON("http://77.48.244.194:8888/?api=json", function(data) {
+        function gotData(data) {
     $('#tlak').append(" " + data.tlak);
     $('#teplota').append(" " + data.teplota);
     $('#vlhkost').append(" " + data.vlhkost);
     
-    }, 'jsonp'
+    }
+        $.getJSON("http://77.48.244.194:8888/?api=json", gotData, 'jsonp'
+                  
 );</script>
       
   </head>
