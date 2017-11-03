@@ -41,16 +41,27 @@
     <link rel="stylesheet" href="css/style.css">
     
     <script>
-        
-        function gotData(data) {
-    $('#tlak').append(" " + data.tlak);
-    $('#teplota').append(" " + data.teplota);
-    $('#vlhkost').append(" " + data.vlhkost);
+  
+      
+function run() {
+
     
-    }
-        $.getJSON("http://77.48.244.194:8888/?api=json", gotData, 'jsonp'
-                  
-);</script>
+ var data = UrlFetchApp.fetch("http://77.48.244.194:8888/?api=json").getContentText();
+ var json = JSON.parse(data);
+ 
+ // Z JSONu získáme a na čísla převedu teplotu, tlak a vlhkost
+ var teplota = parseFloat(json.teplota);
+ var tlak = parseFloat(json.tlak);
+ var vlhkost = parseInt(json.vlhkost) / 100;
+
+    $('#tlak').append(" " + tlak);
+    $('#teplota').append(" " + teplota);
+    $('#vlhkost').append(" " + vlhkost);
+    
+    
+}
+        
+      </script>
       
   </head>
   <body>
